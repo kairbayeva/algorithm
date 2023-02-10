@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+ char d[9] = {' ',' ',' ',' ',' ',' ',' ',' ',' '};
+ void print_d(){
+
+cout << "доска:" <<endl;
+cout <<d[6]<<"|"<<d[7]<<"|"<<d[8]<<"\n";
+cout <<d[3]<<"|"<<d[4]<<"|"<<d [5]<<"\n";
+cout <<d[0]<<"|"<<d[1]<<"|"<<d[2]<<"\n";
+}
+ int get_hod (){
+ cout<<"Варианты: \n";
+cout<<"7|8|9"<< endl;
+cout<<"4|5|6"<<endl;
+cout<<"1|2|3"<<endl;
+cout<<"\n";
+print_d();
+cout << "\n ход:";
+
+int hod;
+cin >>hod ;
+while (hod > 9 || hod < 1 || d[hod-1] != ' '){
+cout<<"введите правильный код (1-9): \n";
+cin>>hod;}
+return hod;
+}
+ int main(){
+for(int i = 0; i<5; i++){
+int hod = get_hod();
+cout<<"ваш ход: "<< hod<<endl;
+if (i%2 == 0) {
+d[hod-1]='X';}
+else{
+d[hod-1]='0';
+}}
+cout <<"окончательный макет: \n";
+print_d();
+return 0;}
